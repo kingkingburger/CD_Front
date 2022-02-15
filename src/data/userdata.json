@@ -2,12 +2,52 @@
   "data": [
     {
       "id": "awkkyBH2zEo",
-      "date": "2021-09-10T04:00:13",
+      "date": "2022-01-10T04:00:13",
       "category": "Music",
       "username": "wonminho",
       "price": "25000",
       "immediately": "27000",
       "title": "이케아 트롤리 팔아요",
+      "location": "경기도 의왕시 오전동"
+    },
+    {
+      "id": "awkkyBH2zEo",
+      "date": "2021-02-10T04:00:13",
+      "category": "Music",
+      "username": "wonminho",
+      "price": "8000",
+      "immediately": "10000",
+      "title": "전자레인지 처분해요",
+      "location": "경기도 의왕시 오전동"
+    },
+    {
+      "id": "awkkyBH2zEo",
+      "date": "2021-02-10T04:00:13",
+      "category": "Music",
+      "username": "wonminho",
+      "price": "100000",
+      "immediately": "150000",
+      "title": "알톤자전거 팝니다.",
+      "location": "경기도 의왕시 오전동"
+    },
+    {
+      "id": "awkkyBH2zEo",
+      "date": "2021-02-10T04:00:13",
+      "category": "Music",
+      "username": "wonminho",
+      "price": "8000",
+      "immediately": "10000",
+      "title": "타요 미끄럼틀",
+      "location": "경기도 의왕시 오전동"
+    },
+    {
+      "id": "awkkyBH2zEo",
+      "date": "2021-02-10T04:00:13",
+      "category": "Music",
+      "username": "wonminho",
+      "price": "100000",
+      "immediately": "120000",
+      "title": "갤럭시 노트8 팝니다",
       "location": "경기도 의왕시 오전동"
     }
   ]

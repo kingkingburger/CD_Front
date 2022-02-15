@@ -1,6 +1,6 @@
 import userdata from "../../data/userdata.json";
 
-const ContentDetail = () => {
+const ContentDetail = ({ data }) => {
   return (
     <div class="container col p-0">
       <div class="text-center">
@@ -11,24 +11,16 @@ const ContentDetail = () => {
         <div>조회수 1085</div>
       </div>
       <div class="d-flex justify-content-between">
-        <div>
-          {userdata["data"].map((item) => {
-            return item.title;
-          })}
-        </div>
+        <div>{data.title}</div>
       </div>
       <div class="d-flex justify-content-between">
-        <div>
-          {userdata["data"].map((item) => {
-            return item.location;
-          })}
-        </div>
+        <div>{data.location}</div>
       </div>
       <div class="d-flex justify-content-end">
-        <div>현재가격: 25,000</div>
+        <div>현재가격: {data.price}</div>
       </div>
       <div class="d-flex justify-content-end">
-        <div>즉시구매가격: 27,000</div>
+        <div>즉시구매가격: {data.immediately}</div>
       </div>
     </div>
   );
