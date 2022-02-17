@@ -2,14 +2,14 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div class="container-fluid navbar navbar-expand-sm navbar-light bg-light justify-content-sm-center">
+    <div class="container-fluid navbar navbar-expand-sm navbar-light bg-light justify-content-sm-center bg-white border-bottom">
       <div class="col-md-8">
         <div
           class="collapse navbar-collapse justify-content-between"
           id="mynavbar"
         >
           <a class="navbar-brand" href="javascript:void(0)">
-            Logo
+            <img alt="logo" src="/logo.png" />
           </a>
 
           <form class="d-flex col-md-7 me-4">

@@ -4,7 +4,7 @@ const ContentDetail = ({ data }) => {
   return (
     <div class="container col p-0">
       <div class="text-center">
-        <img width="200" height="250" alt="contentpull" src="/logo192.png" />
+        <img width="200" height="250" alt="contentpull" src={data.imgsrc} />
       </div>
       <div class="d-flex justify-content-between">
         <div>남은 시간: 75:00</div>
