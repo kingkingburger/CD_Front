@@ -17,6 +17,17 @@
   margin: 0 auto;
   margin-bottom: 20px;
   background: #fff;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+}
+.article_kind {
+  font-weight: 600;
+  color: #212529;
+  font-size: 18px;
+  margin: 20px 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }

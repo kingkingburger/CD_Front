@@ -22,3 +22,16 @@
   line-height: 18px;
   margin-top: 6px;
 }
+
+.img {
+  width: 100%;
+  display: block;
+  transform: translate(0, -13%);
+}
+.card_photo {
+  height: 160px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  font-size: 62.5%;
+}
