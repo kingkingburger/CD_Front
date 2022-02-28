@@ -4,6 +4,7 @@ import userdata from "../../data/userdata.json";
 import { useEffect } from "react";
 
 const Content = () => {
+  //spring에서 데이터 긁어옴
   const getMovies = async () => {
     fetch("http://localhost:8080/api/boards", {
       headers: {

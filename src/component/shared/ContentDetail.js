@@ -3,9 +3,9 @@ import styles from "./ContentDetail.module.css";
 const ContentDetail = ({ data }) => {
   let imgg = require(`../../images${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
   // let imgg = require(`${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
-  console.log(data.imgsrc);
+  // console.log(data.imgsrc); // /logo.png
   console.log(imgg);
-  console.log(`../../images${data.imgsrc}`);
+  // console.log(`../../images${data.imgsrc}`);
 
   return (
     <div className="container col p-0">
