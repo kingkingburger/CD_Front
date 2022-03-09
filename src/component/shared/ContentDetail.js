@@ -1,20 +1,31 @@
 import styles from "./ContentDetail.module.css";
+import { useEffect, useState } from "react";
+import moment from "moment";
+import Timer from "./Timer";
 
 const ContentDetail = ({ data }) => {
+  const [time, setTime] = useState(moment());
   let imgg = require(`../../images${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
-  // let imgg = require(`${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
-  // console.log(data.imgsrc); // /logo.png
-  console.log(imgg);
-  // console.log(`../../images${data.imgsrc}`);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(moment());
+    }, 1000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
 
   return (
     <div className="container col p-0">
       <div className={styles.card_photo}>
         <img className={styles.img} alt="contentpull" src={imgg} />
       </div>
-      <div className="d-flex justify-content-between ">
-        <div>남은 시간: 75:00</div>
-        <div>조회수 1085</div>
+      <div className="d-flex justify-content-center ">
+        <div>
+          <Timer props={[1, 56, 30]} />
+        </div>
       </div>
       <div className="d-flex justify-content-between pt-2 ">
         <div className={styles.result_title}>{data.title}</div>

@@ -1,23 +1,41 @@
+import axios from "axios";
 import ContentDetail from "./ContentDetail";
 import styles from "./Content.module.css";
 import userdata from "../../data/userdata.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Content = () => {
   //spring에서 데이터 긁어옴
-  const getMovies = async () => {
-    fetch("http://localhost:8080/api/boards", {
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((dd) => console.log(dd));
+  let [jdata, setJdata] = useState([]);
+  const getData = async () => {
+    // fetch("http://localhost:8080/api/boards/1", {
+    //   headers: {
+    //     Accept: "application/json",
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((dd) => console.log(dd));
+    const url = "http://localhost:8080/api/b";
+    axios
+      .get(url)
+      .then((res) => {
+        setJdata(res.data);
+        console.log("성공");
+      })
+      .catch((Error) => {
+        console.log(Error);
+      });
   };
 
   useEffect(() => {
-    getMovies();
+    getData();
   }, []);
+
+  if (jdata.length > 0) {
+    return jdata.map((realdata) => (
+      <div key={realdata.id}>{realdata.category}</div>
+    ));
+  }
 
   return (
     <div className={styles.background}>
