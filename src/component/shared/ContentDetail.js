@@ -24,7 +24,7 @@ const ContentDetail = ({ data }) => {
       </div>
       <div className="d-flex justify-content-center ">
         <div>
-          <Timer props={[1, 56, 30]} />
+          <Timer />
         </div>
       </div>
       <div className="d-flex justify-content-between pt-2 ">

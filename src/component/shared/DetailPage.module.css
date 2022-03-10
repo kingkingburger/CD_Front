@@ -1,0 +1,8 @@
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+  /*색상 반전*/
+  filter: invert(100%);
+}
+.carousel-indicators {
+  filter: invert(100%);
+}
