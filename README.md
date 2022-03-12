@@ -7,6 +7,8 @@ index.js
         └── <Layout />
     		├── <Header/>
 			└── <Content/>
-
+	 ── <DetailContent />
+			├── <Header/>
+			└── <DetailPage/>
 ```
 

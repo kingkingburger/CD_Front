@@ -46,7 +46,7 @@ const Content = () => {
           {userdata["data"].map((item) => {
             return (
               <div className={styles.flat_card}>
-                <ContentDetail data={item} />
+                <ContentDetail key={item.id} data={item} />
               </div>
             );
           })}
