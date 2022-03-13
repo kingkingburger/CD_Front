@@ -1,7 +1,11 @@
-import detailPage from "../css/detailPage.css";
 import styles from "./DetailPage.module.css";
+import userdata from "../../data/userdata.json";
+import Timer from "./Timer";
 
 function DetailPage() {
+  const user = userdata["data"];
+  console.log(user);
+  let imgg = require(`../../images${user[0].imgsrc}`); // 웹 팩에서 데이터를 가져오기
   return (
     <div>
       <div className="container d-flex justify-content-center bg-light mt-5 ">
@@ -34,7 +38,7 @@ function DetailPage() {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
-                  src="../../images/나이키신발1.png"
+                  src={imgg}
                   width="700px"
                   alt="nikeShoes1"
                   className="d-block "
@@ -42,7 +46,7 @@ function DetailPage() {
               </div>
               <div className="carousel-item">
                 <img
-                  src="../../images/나이키신발2.png"
+                  src={imgg}
                   width="700px"
                   alt="nikeShoes2"
                   className="d-block "
@@ -51,7 +55,7 @@ function DetailPage() {
 
               <div className="carousel-item">
                 <img
-                  src="../../images/나이키신발3.png"
+                  src={imgg}
                   width="700px"
                   alt="nikeShoes3"
                   className="d-block "
@@ -77,27 +81,23 @@ function DetailPage() {
             </button>
           </div>
 
-          <div className="text-center">남은시간 : xxxx</div>
-          <div className="mt-4">판매자 이름</div>
-          <div>판매자 동내 이름</div>
-          <div className="mt-4">이케아 트롤리 팔아요</div>
-          <div className="mt-4">경기도 의왕시 오전동</div>
-
-          <div className="mt-4">
-            제품 상세 정보들--------------------------------------
+          <div className="text-center">
+            남은시간 : <Timer />
           </div>
-          <div>제품 상세 정보들--------------------------------------</div>
-          <div>제품 상세 정보들--------------------------------------</div>
-          <div>제품 상세 정보들--------------------------------------</div>
-          <div>제품 상세 정보들--------------------------------------</div>
-          <div>제품 상세 정보들--------------------------------------</div>
-          <div>제품 상세 정보들--------------------------------------</div>
+          <div className="mt-4">판매자: {user[0].username}</div>
+          <div className="mt-4">{user[0].title}</div>
+          <div className="mt-4">{user[0].location}</div>
+
+          <div className={styles.center_line_up}>
+            -------------------------상세 정보-----------------------
+          </div>
 
           <div>관심0 조회수0</div>
-          <div>현재 가격: 25,000</div>
-          <div>즉시 구매가: 27,000</div>
+          <div>현재 가격: {user[0].price}</div>
+          <div>즉시 구매가: {user[0].immediately}</div>
 
           <p className="text-end">평균 거래가: 26,000</p>
+
           <div className="text-end">
             <button
               type="button"

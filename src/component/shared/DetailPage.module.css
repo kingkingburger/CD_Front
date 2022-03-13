@@ -6,3 +6,9 @@
 .carousel-indicators {
   filter: invert(100%);
 }
+
+.center_line_up {
+  margin: 0 auto;
+  font-size: small;
+  margin-top: 1.5rem;
+}
