@@ -1,11 +1,14 @@
 import styles from "./DetailPage.module.css";
 import userdata from "../../data/userdata.json";
+import { useParams } from "react-router-dom";
 import Timer from "./Timer";
 
 function DetailPage() {
-  const user = userdata["data"];
-  console.log(user);
-  let imgg = require(`../../images${user[0].imgsrc}`); // 웹 팩에서 데이터를 가져오기
+  const { id } = useParams();
+  //id에 맞는 item 가져오기
+  const user = userdata["data"].filter((word) => word.id === id)[0];
+
+  let imgg = require(`../../images${user.imgsrc}`); // 웹 팩에서 데이터를 가져오기
   return (
     <div>
       <div className="container d-flex justify-content-center bg-light mt-5 ">
@@ -84,17 +87,17 @@ function DetailPage() {
           <div className="text-center">
             남은시간 : <Timer />
           </div>
-          <div className="mt-4">판매자: {user[0].username}</div>
-          <div className="mt-4">{user[0].title}</div>
-          <div className="mt-4">{user[0].location}</div>
+          <div className="mt-4">판매자: {user.username}</div>
+          <div className="mt-4">{user.title}</div>
+          <div className="mt-4">{user.location}</div>
 
           <div className={styles.center_line_up}>
             -------------------------상세 정보-----------------------
           </div>
 
           <div>관심0 조회수0</div>
-          <div>현재 가격: {user[0].price}</div>
-          <div>즉시 구매가: {user[0].immediately}</div>
+          <div>현재 가격: {user.price}</div>
+          <div>즉시 구매가: {user.immediately}</div>
 
           <p className="text-end">평균 거래가: 26,000</p>
 

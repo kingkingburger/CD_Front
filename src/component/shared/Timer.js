@@ -11,7 +11,6 @@ const Timer = () => {
       setMin(parseInt(time.current / 60));
       setSec(time.current % 60);
       time.current -= 1;
-      console.log("Interval 동작");
     }, 1000);
     console.log("위 useEffect 동작");
     return () => clearInterval(timerId.current); // 시간이 다되면 여기서 정지한다.
