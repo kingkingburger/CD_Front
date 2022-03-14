@@ -20,7 +20,7 @@ const ContentDetail = ({ data }) => {
 
   return (
     <div className="container col p-0">
-      <Link to="/item" style={{ textDecoration: "none" }}>
+      <Link to={`/item/${data.id}`} style={{ textDecoration: "none" }}>
         <div className={styles.card_photo}>
           <img className={styles.img} alt="contentpull" src={imgg} />
         </div>
