@@ -5,19 +5,7 @@ import Timer from "./Timer";
 import { Link } from "react-router-dom";
 
 const ContentDetail = ({ data }) => {
-  const [time, setTime] = useState(moment());
   let imgg = require(`../../images${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(moment());
-    }, 1000);
-
-    return () => {
-      clearInterval(id);
-    };
-  }, []);
-
   return (
     <div className="container col p-0">
       <Link to={`/item/${data.id}`} style={{ textDecoration: "none" }}>
