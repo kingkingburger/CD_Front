@@ -1,36 +1,87 @@
+import { useState } from "react";
+import { Dropdown, DropdownButton } from "react-bootstrap";
+import DropdownMenu from "../../util/Dropdown";
 import styles from "./Header.module.css";
-import img from "../../images/logo.png";
+
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+  const onClick = () => setIsActive(!isActive);
+  console.log(isActive);
+
   return (
-    <div className="container navbar navbar-expand-sm navbar-light bg-light justify-content-sm-center bg-white border-bottom">
-      <div className="col-md-8">
-        <div
-          className="collapse navbar-collapse justify-content-between"
-          id="mynavbar"
+    <nav className="navbar navbar-expand-xxl navbar-dark  bg-danger">
+      <div className="container px-5 ">
+        <a className={`${styles.logo} text-white`} href="#">
+          Silk Road
+        </a>
+        <button
+          className="navbar-toggler my-1"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+          onClick={onClick}
         >
-          <a className="navbar-brand">
-            <img alt="logo" src={img} />
-          </a>
+          <span className="navbar-toggler-icon"></span>
+          {isActive ? <DropdownMenu /> : console.log("안찍힘")}
+        </button>
 
-          <form className="d-flex col-md-7 me-4">
-            <input className="form-control" type="text" placeholder="Search" />
-            <button className="btn btn-primary" type="button">
-              Search
-            </button>
-          </form>
+        <div className="collapse navbar-collapse" id="mynavbar">
+          <ul className="navbar-nav me-auto">
+            <li>
+              <form class="d-inline-flex">
+                <select class="ms-2 rounded-0 border border-4 border-primary form-select w-25">
+                  <option>전체</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
 
-          <div className="navbar-nav ">
-            <button className="btn btn-primary " type="button">
-              로그인
-            </button>
-          </div>
-        </div>
-
-        <div className="collapse navbar-collapse text-primary justify-content-sm-center">
-          경기도 의왕시 근처를 검색하고 있어요.
+                <input
+                  type="text"
+                  size="50"
+                  class="form-control rounded-0 border-start-0 border-end-0  border-primary border-4"
+                  placeholder="검색"
+                />
+                <button
+                  class="btn rounded-0 bg-white border-start-0  border-primary border-4"
+                  type="button "
+                >
+                  <img
+                    className={`${styles.fill}`}
+                    src={require(`../../images/돋보기.png`)}
+                  />
+                </button>
+              </form>
+            </li>
+            <li className="nav-item mx-1 d-flex align-items-center">
+              <a className="nav-link text-white " href="#">
+                로그인
+              </a>
+            </li>
+            <li className="nav-item mx-1 d-flex align-items-center">
+              <a className="nav-link text-white" href="#">
+                회원가입
+              </a>
+            </li>
+            <li className="nav-item mx-1 d-flex align-items-center">
+              <a className="nav-link text-white" href="#">
+                장바구니
+              </a>
+            </li>
+            <li className="nav-item mx-1 d-flex align-items-center">
+              <a className="nav-link text-white" href="#">
+                마이페이지
+              </a>
+            </li>
+            <li className="nav-item mx-1 d-flex align-items-center">
+              <a className="nav-link text-white" href="#">
+                판매하기
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,60 +1,9 @@
-.header {
-  display: flex;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 56px;
-  padding: 0 16px;
-  background-color: white;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-.tab {
-  display: flex;
-  align-items: center;
-}
-.icon {
-  width: 24px;
-  height: 24px;
-  padding: 10px;
-  cursor: pointer;
-}
 .logo {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.center-tab {
-  display: flex;
-  align-items: center;
-  flex: 0 1 640px;
-  padding: 0 16px;
-}
-.input {
-  height: 30px;
-  border: 1px solid #d3d3d3;
-  box-sizing: border-box;
-  flex: 1;
-}
-.search-icon {
-  width: 24px;
-  height: 24px;
-  padding: 2px 20px;
-  border: 1px solid #d3d3d3;
-  background-color: #f8f8f8;
-  cursor: pointer;
+  font-size: 35px;
+  text-decoration-line: none;
+  font-family: "Sansita Swashed", cursive;
 }
 
-.login {
-  padding: 2px 20px;
-  width: 100px;
-  height: 38px;
-  border: 1px solid #d1d3d8;
-  background-color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.background {
-  background: #fff;
+.fill {
+  font-size: 5px;
 }
