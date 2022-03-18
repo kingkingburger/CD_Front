@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 
 const ContentDetail = ({ data }) => {
   let imgg = require(`../../images${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
+  const url = `/item/${data.id}`;
   return (
     <div className="container col p-0">
-      <Link to={`/item/${data.id}`} style={{ textDecoration: "none" }}>
+      <Link
+        to={{ pathname: url, state: { data: data } }}
+        style={{ textDecoration: "none" }}
+      >
         <div className={styles.card_photo}>
           <img className={styles.img} alt="contentpull" src={imgg} />
         </div>

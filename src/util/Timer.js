@@ -12,14 +12,12 @@ const Timer = () => {
       setSec(time.current % 60);
       time.current -= 1;
     }, 1000);
-    console.log("위 useEffect 동작");
     return () => clearInterval(timerId.current); // 시간이 다되면 여기서 정지한다.
   }, []);
 
   useEffect(() => {
     // 만약 타임 아웃이 발생했을 경우
     if (time.current <= 0) {
-      console.log("아래 useEffect 동작");
       clearInterval(timerId.current);
       // dispatch event
     }

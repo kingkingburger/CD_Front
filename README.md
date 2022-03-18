@@ -8,9 +8,9 @@ index.js
     │		├── <Header/>
     │		├── <SubHeader/>
 	│		└── <Content/>
-	└── <DetailContent />
+	└── <DetailPage />
 			├── <Header/>
-			└── <DetailPage/>
+			└── <DetailContent/>
 ```
 
 
@@ -23,7 +23,7 @@ src
 	└── shared
 		└── Conetent
 		├── ContentDetail
-		├── DetailPage
+		├── DetailContent
 		├── Header
 		├── Layout
 		└── SubHeader

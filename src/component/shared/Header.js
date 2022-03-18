@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import DropdownMenu from "../../util/Dropdown";
 import styles from "./Header.module.css";
 
@@ -11,9 +11,12 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-xxl navbar-dark  bg-danger">
       <div className="container px-5 ">
-        <a className={`${styles.logo} text-white`} href="#">
+        <Link to={`/`} className={`${styles.logo} text-white`}>
           Silk Road
-        </a>
+        </Link>
+        {/* <a className={`${styles.logo} text-white`} href="/">
+          Silk Road
+        </a> */}
         <button
           className="navbar-toggler my-1"
           type="button"

@@ -2,9 +2,9 @@ import styles from "./SubHeader.module.css";
 
 const SubHeader = () => {
   return (
-    <div className="container px-5 mt-3 d-flex justify-content-center">
-      <div className="row g-0 ">
-        <div className={`col-xxl-6 d-flex`}>
+    <div className="container mt-3 d-flex justify-content-center">
+      <div className="row g-auto justify-content-md-center">
+        <div className={`col-xl-6 d-flex justify-content-md-center`}>
           <div className=" p-2 flex border dropdown">
             <a
               className={`dropdown-toggle ${styles.aTag}`}
@@ -93,7 +93,7 @@ const SubHeader = () => {
             </a>
           </div>
         </div>
-        <div className={`col-xxl-5 d-flex`}>
+        <div className={`col-xl-6 d-flex justify-content-md-center`}>
           <div className="p-2 flex border">
             <a className={styles.aTag} href="#">
               <img
