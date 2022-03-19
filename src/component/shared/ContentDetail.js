@@ -10,7 +10,18 @@ const ContentDetail = ({ data }) => {
   return (
     <div className="container col p-0">
       <Link
-        to={{ pathname: url, state: { data: data } }}
+        to={url}
+        state={{
+          id: data.id,
+          date: data.date,
+          category: data.category,
+          username: data.username,
+          price: data.price,
+          immediately: data.immediately,
+          title: data.title,
+          location: data.location,
+          imgsrc: data.imgsrc,
+        }}
         style={{ textDecoration: "none" }}
       >
         <div className={styles.card_photo}>

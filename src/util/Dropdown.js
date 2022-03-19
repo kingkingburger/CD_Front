@@ -1,7 +1,6 @@
 import { Dropdown } from "react-bootstrap";
 
 const DropdownMenu = (isActive) => {
-  console.log(isActive);
   return (
     <Dropdown.Menu show>
       <Dropdown.Item href="#/action-1">로그인</Dropdown.Item>

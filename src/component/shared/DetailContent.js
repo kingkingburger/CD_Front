@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import Timer from "../../util/Timer";
 import ContentDetail from "./ContentDetail";
 
-const DetailContent = () => {
+const DetailContent = ({ data }) => {
   const { id } = useParams();
   //id에 맞는 item 가져오기
-  const user = userdata["data"].filter((word) => word.id === id)[0];
-
+  // const user = userdata["data"].filter((word) => word.id === id)[0];
+  const user = data;
   let imgg = require(`../../images${user.imgsrc}`); // 웹 팩에서 데이터를 가져오기
   return (
     <div>
@@ -116,7 +116,7 @@ const DetailContent = () => {
           </div>
           <hr style={{ height: "3px" }}></hr>
           <div className="mt-1">다른 상품 정보</div>
-          <div className={styles.card_background}>
+          <div>
             {userdata["data"].map((item) => {
               return (
                 <div className={styles.flat_card}>

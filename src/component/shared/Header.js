@@ -6,7 +6,6 @@ import styles from "./Header.module.css";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
-  console.log(isActive);
 
   return (
     <nav className="navbar navbar-expand-xxl navbar-dark  bg-danger">
@@ -25,11 +24,11 @@ const Header = () => {
           onClick={onClick}
         >
           <span className="navbar-toggler-icon"></span>
-          {isActive ? <DropdownMenu /> : console.log("안찍힘")}
+          {isActive ? <DropdownMenu /> : null}
         </button>
 
-        <div className="collapse navbar-collapse" id="mynavbar">
-          <ul className="navbar-nav me-auto">
+        <div className="navbar-collapse" id="mynavbar">
+          <ul className="navbar-nav align-items-center">
             <li>
               <form class="d-inline-flex">
                 <select class="ms-2 rounded-0 border border-4 border-primary form-select w-25">
