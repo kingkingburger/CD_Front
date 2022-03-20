@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "../../util/Dropdown";
-import styles from "./Header.module.css";
+import styles from "../css/Header.module.css";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);

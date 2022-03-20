@@ -1,6 +1,4 @@
-import styles from "./ContentDetail.module.css";
-import { useEffect, useState } from "react";
-import moment from "moment";
+import styles from "../css/ContentDetail.module.css";
 import Timer from "../../util/Timer";
 import { Link } from "react-router-dom";
 

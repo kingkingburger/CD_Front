@@ -1,91 +1,21 @@
-import styles from "./DetailContent.module.css";
+import styles from "../css/DetailContent.module.css";
 import userdata from "../../data/userdata.json";
 import { useParams } from "react-router-dom";
 import Timer from "../../util/Timer";
 import ContentDetail from "./ContentDetail";
+import Moving_slid from "../detailcontent_element/Moving_slid";
 
 const DetailContent = ({ data }) => {
-  const { id } = useParams();
+  // const { id } = useParams();
   //id에 맞는 item 가져오기
-  // const user = userdata["data"].filter((word) => word.id === id)[0];
   const user = data;
   let imgg = require(`../../images${user.imgsrc}`); // 웹 팩에서 데이터를 가져오기
   return (
     <div>
-      <div className={`container d-flex justify-content-center bg-gray`}>
+      <div className={`container d-flex justify-content-center `}>
         <div className={styles.background}>
           <div className="d-flex flex-column px-5">
-            <div
-              id="demo"
-              className="carousel slide "
-              data-bs-ride="carousel"
-              style={{ maxWidth: "700px" }}
-            >
-              <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="0"
-                  className="active"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="2"
-                ></button>
-              </div>
-
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img
-                    src={imgg}
-                    width="500px"
-                    alt="nikeShoes1"
-                    className="d-block "
-                  />
-                </div>
-                <div className="carousel-item">
-                  <img
-                    src={imgg}
-                    width="500px"
-                    alt="nikeShoes2"
-                    className="d-block "
-                  />
-                </div>
-
-                <div className="carousel-item">
-                  <img
-                    src={imgg}
-                    width="500px"
-                    alt="nikeShoes3"
-                    className="d-block "
-                  />
-                </div>
-              </div>
-
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="prev"
-              >
-                <span className="carousel-control-prev-icon"></span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="next"
-              >
-                <span className="carousel-control-next-icon"></span>
-              </button>
-            </div>
-
+            <Moving_slid data={imgg} />
             <div className="text-center">
               남은시간 : <Timer />
             </div>
