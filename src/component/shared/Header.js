@@ -8,7 +8,7 @@ const Header = () => {
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <nav className="navbar navbar-expand-xxl navbar-dark  bg-danger">
+    <nav className="navbar navbar-expand-xxl navbar-dark bg-danger">
       <div className="container px-5 ">
         <Link to={`/`} className={`${styles.logo} text-white`}>
           Silk Road
