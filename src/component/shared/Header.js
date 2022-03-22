@@ -29,8 +29,8 @@ const Header = () => {
         <div className="navbar-collapse" id="mynavbar">
           <ul className="navbar-nav align-items-center">
             <li>
-              <form class="d-inline-flex">
-                <select class="ms-2 rounded-0 border border-4 border-primary form-select w-25">
+              <form className="d-inline-flex">
+                <select className="ms-2 rounded-0 border border-4 border-primary form-select w-25">
                   <option>전체</option>
                   <option>2</option>
                   <option>3</option>
@@ -40,11 +40,11 @@ const Header = () => {
                 <input
                   type="text"
                   size="50"
-                  class="form-control rounded-0 border-start-0 border-end-0  border-primary border-4"
+                  className="form-control rounded-0 border-start-0 border-end-0  border-primary border-4"
                   placeholder="검색"
                 />
                 <button
-                  class="btn rounded-0 bg-white border-start-0  border-primary border-4"
+                  className="btn rounded-0 bg-white border-start-0  border-primary border-4"
                   type="button "
                 >
                   <img
