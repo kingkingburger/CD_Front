@@ -4,7 +4,7 @@ const Moving_slid = ({ data }) => {
   return (
     <div id="demo" className="carousel slide " data-bs-ride="carousel">
       <div>
-        <div className="carousel-indicators bg-secondary bg-gradient">
+        <div className="carousel-indicators">
           <button
             type="button"
             data-bs-target="#demo"

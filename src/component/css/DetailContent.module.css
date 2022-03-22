@@ -47,3 +47,39 @@
   padding-left: 1.1em;
   padding-right: 1.1em;
 }
+.result_title {
+  display: block;
+  font-weight: 600;
+  color: rgb(33, 37, 41);
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.result_location {
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(134, 142, 150);
+}
+
+.seller {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  color: #212529;
+}
+
+.profile {
+  /* display: inline-block; */
+  border-bottom: 1px solid #e9ecef;
+}
+
+.article_counts {
+  font-size: 13px;
+  line-height: 1.46;
+  letter-spacing: -0.6px;
+  color: #868e96;
+}

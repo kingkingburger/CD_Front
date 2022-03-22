@@ -19,15 +19,17 @@ const DetailContent = ({ data }) => {
             <div className="text-center">
               남은시간 : <Timer />
             </div>
-            <div className="mt-4 text-center">판매자: {user.username}</div>
-            <div className="mt-4">{user.title}</div>
-            <div className="mt-4">{user.location}</div>
 
-            <div className={styles.center_line_up}>
-              -------------------------상세 정보-----------------------
+            <div className={`${styles.profile}`}>
+              <div className="mt-1">{user.username}</div>
+              <div className={`${styles.result_location}`}>{user.location}</div>
             </div>
 
-            <div>관심0 조회수0</div>
+            <div className={`${styles.result_title} mt-4 `}>{user.title}</div>
+
+            <div className={styles.center_line_up}></div>
+            <div>상세내용</div>
+            <div className={`${styles.article_counts} mt-3`}>관심0 조회수0</div>
             <div>현재 가격: {user.price}</div>
             <div>즉시 구매가: {user.immediately}</div>
 
