@@ -7,6 +7,7 @@ const DetailPage = () => {
   return (
     <div>
       <Header />
+
       <DetailContent key={location.id} data={location.state} />
     </div>
   );

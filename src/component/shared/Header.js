@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import DropdownMenu from "../../util/Dropdown";
 import styles from "../css/Header.module.css";
 
 const Header = () => {
@@ -24,7 +23,7 @@ const Header = () => {
           onClick={onClick}
         >
           <span className="navbar-toggler-icon"></span>
-          {isActive ? <DropdownMenu /> : null}
+          {isActive ? null : null}
         </button>
 
         <div className="navbar-collapse" id="mynavbar">
@@ -55,31 +54,33 @@ const Header = () => {
                 </button>
               </form>
             </li>
-            <li className="nav-item mx-1 d-flex align-items-center">
-              <a className="nav-link text-white " href="#">
-                로그인
-              </a>
-            </li>
-            <li className="nav-item mx-1 d-flex align-items-center">
-              <a className="nav-link text-white" href="#">
-                회원가입
-              </a>
-            </li>
-            <li className="nav-item mx-1 d-flex align-items-center">
-              <a className="nav-link text-white" href="#">
-                장바구니
-              </a>
-            </li>
-            <li className="nav-item mx-1 d-flex align-items-center">
-              <a className="nav-link text-white" href="#">
-                마이페이지
-              </a>
-            </li>
-            <li className="nav-item mx-1 d-flex align-items-center">
-              <a className="nav-link text-white" href="#">
-                판매하기
-              </a>
-            </li>
+            <div className="d-flex">
+              <li className="nav-item mx-1 d-flex align-items-center">
+                <a className="nav-link text-white " href="#">
+                  로그인
+                </a>
+              </li>
+              <li className="nav-item mx-1 d-flex align-items-center">
+                <a className="nav-link text-white" href="#">
+                  회원가입
+                </a>
+              </li>
+              <li className="nav-item mx-1 d-flex align-items-center">
+                <a className="nav-link text-white" href="#">
+                  장바구니
+                </a>
+              </li>
+              <li className="nav-item mx-1 d-flex align-items-center">
+                <a className="nav-link text-white" href="#">
+                  마이페이지
+                </a>
+              </li>
+              <li className="nav-item mx-1 d-flex align-items-center">
+                <a className="nav-link text-white" href="#">
+                  판매하기
+                </a>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
