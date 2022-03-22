@@ -20,6 +20,8 @@ index.js
 ```
 src
 ├── component
+	└── detailcontent_element
+		└── Moving_slid
 	└── shared
 		└── Conetent
 		├── ContentDetail
