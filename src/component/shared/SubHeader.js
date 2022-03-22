@@ -1,4 +1,4 @@
-import styles from "./SubHeader.module.css";
+import styles from "../css/SubHeader.module.css";
 
 const SubHeader = () => {
   return (

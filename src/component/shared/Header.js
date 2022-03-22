@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Header.module.css";
+import styles from "../css/Header.module.css";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <nav className="navbar navbar-expand-xxl navbar-dark  bg-danger">
+    <nav className="navbar navbar-expand-xxl navbar-dark bg-danger">
       <div className="container px-5 ">
         <Link to={`/`} className={`${styles.logo} text-white`}>
           Silk Road

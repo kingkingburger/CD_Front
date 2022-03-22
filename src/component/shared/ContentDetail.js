@@ -1,6 +1,4 @@
-import styles from "./ContentDetail.module.css";
-import { useEffect, useState } from "react";
-import moment from "moment";
+import styles from "../css/ContentDetail.module.css";
 import Timer from "../../util/Timer";
 import { Link } from "react-router-dom";
 
@@ -44,11 +42,11 @@ const ContentDetail = ({ data }) => {
           <div className={styles.result_location}>{data.location}</div>
         </div>
         <div className="d-flex justify-content-end">
-          <div className={styles.result_price}>현재가격: {data.price}</div>
+          <div className={styles.result_price}>현재가격: {data.price}원</div>
         </div>
         <div className="d-flex justify-content-end">
           <div className={styles.result_price}>
-            즉시구매가격: {data.immediately}
+            즉시구매가격: {data.immediately}원
           </div>
         </div>
       </Link>

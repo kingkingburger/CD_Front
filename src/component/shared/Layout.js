@@ -1,4 +1,4 @@
-import styles from "./Layout.module.css";
+import styles from "../css/Layout.module.css";
 import Header from "./Header";
 import Content from "./Content";
 import SubHeader from "./SubHeader";

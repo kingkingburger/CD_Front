@@ -1,6 +1,6 @@
 import axios from "axios";
 import ContentDetail from "./ContentDetail";
-import styles from "./Content.module.css";
+import styles from "../css/Content.module.css";
 import userdata from "../../data/userdata.json";
 import { useEffect, useState } from "react";
 
