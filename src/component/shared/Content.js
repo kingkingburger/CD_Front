@@ -38,14 +38,14 @@ const Content = () => {
   // }
 
   return (
-    <div className={styles.background}>
-      <div className="container col-10 mt-2 ">
-        <div className={styles.card_background}>
+    <div className={`${styles.background}`}>
+      <div className="row mt-2">
+        <div className={`${styles.card_background}`}>
           <p className={styles.article_kind}>인기 중고</p>
           {/* 컨탠츠 3개 들어가는 곳 */}
           {userdata["data"].map((item) => {
             return (
-              <div className={styles.flat_card}>
+              <div className={`${styles.flat_card} mx-3`}>
                 <ContentDetail key={item.id} data={item} />
               </div>
             );

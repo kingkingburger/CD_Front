@@ -6,7 +6,7 @@ const ContentDetail = ({ data }) => {
   let imgg = require(`../../images${data.imgsrc}`); // 웹 팩에서 데이터를 가져오기
   const url = `/item/${data.id}`;
   return (
-    <div className="container col p-0">
+    <div className="container row p-0">
       <Link
         to={url}
         state={{
@@ -23,7 +23,11 @@ const ContentDetail = ({ data }) => {
         style={{ textDecoration: "none" }}
       >
         <div className={styles.card_photo}>
-          <img className={styles.img} alt="contentpull" src={imgg} />
+          <img
+            className={`${styles.img} mx-auto`}
+            alt="contentpull"
+            src={imgg}
+          />
         </div>
 
         <div className="d-flex justify-content-center ">
