@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../css/Header.module.css";
+import font from "../css/Font.module.css";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -9,7 +10,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-xxl navbar-dark bg-danger">
       <div className="container px-5 ">
-        <Link to={`/`} className={`${styles.logo} text-white`}>
+        <Link to={`/`} className={`${font.logo} text-white`}>
           Silk Road
         </Link>
         {/* <a className={`${styles.logo} text-white`} href="/">
@@ -61,9 +62,9 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item mx-1 d-flex align-items-center">
-                <a className="nav-link text-white" href="#">
+                <Link to={`/SignUp`} className="nav-link text-white">
                   회원가입
-                </a>
+                </Link>
               </li>
               <li className="nav-item mx-1 d-flex align-items-center">
                 <a className="nav-link text-white" href="#">
