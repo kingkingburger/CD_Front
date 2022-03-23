@@ -77,7 +77,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item mx-1 d-flex align-items-center">
-                <a className="nav-link text-white" href="#">
+                <a className="nav-link text-white" href="/uploadPage">
                   판매하기
                 </a>
               </li>
