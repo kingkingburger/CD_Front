@@ -19,19 +19,20 @@ const SubHeader = () => {
               ></img>
               <div className="text-center text-dark ">의류</div>
             </a>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Link 1
                 </a>
               </li>
+
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Link 2
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Link 3
                 </a>
               </li>
