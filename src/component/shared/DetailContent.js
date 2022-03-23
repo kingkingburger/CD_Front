@@ -44,6 +44,56 @@ const DetailContent = ({ data }) => {
               >
                 입찰하기
               </button>
+
+              <div className="modal" id="myModal">
+                <div className="modal-dialog">
+                  <div className="modal-content text-start">
+                    <div className="modal-header">
+                      <h4 className="modal-title">입찰 금액</h4>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                      ></button>
+                    </div>
+
+                    <div className="modal-body">
+                      <div className="modal-body">
+                        <form action="/action_page.php">
+                          <div>
+                            <label htmlFor="text" className="form-label">
+                              <h4>금액 </h4>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id=""
+                              placeholder="금액 입력"
+                              name=""
+                            />
+                          </div>
+
+                          <div className="form-check my-3">
+                            <label className="form-check-label">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="remember"
+                              />
+                              Remember me
+                            </label>
+                          </div>
+                          <div className="text-end">
+                            <button type="submit" className="btn btn-primary">
+                              Submit
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <hr style={{ height: "3px" }}></hr>
