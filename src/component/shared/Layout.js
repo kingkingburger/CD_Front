@@ -8,8 +8,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <SubHeader />
-      <Content />
+      <SideBar />
     </div>
   );
 };

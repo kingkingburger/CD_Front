@@ -1,8 +1,6 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
-
 const SideBar = () => {
   return (
-    <div>
+    <div className="d-table-sell">
       <div
         className="d-flex flex-column flex-shrink-0 col-sm-4 m-5 p-3 bg-light rounded d-none d-sm-block "
         style={{ width: "280px", height: "800px" }}
@@ -175,10 +173,6 @@ const SideBar = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="d-flex flex-column">
-        <div className="col-sm-6">asdads</div>
-        <div className="col-sm-6">asdasd</div>
       </div>
     </div>
   );
