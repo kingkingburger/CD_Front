@@ -5,6 +5,7 @@ import SignUpPage from "./page/SignUpPage";
 import UploadPage from "./page/UploadPage";
 import MyPage from "./page/MyPage";
 import BasketPage from "./page/BasketPage";
+
 function App() {
   return (
     <Routes>
@@ -14,6 +15,7 @@ function App() {
       <Route path="/uploadPage" element={<UploadPage />} />
       <Route path="/MyPage" element={<MyPage />} />
       <Route path="/BasketPage" element={<BasketPage />} />
+
     </Routes>
   );
 }
