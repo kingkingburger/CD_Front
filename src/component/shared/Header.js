@@ -65,9 +65,9 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
-                  <a className="nav-link text-white" href="#">
+                  <Link to={`/BasketPage`} className="nav-link text-white">
                     장바구니
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
                   <Link to={`/MyPage`} className="nav-link text-white">

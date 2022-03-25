@@ -9,12 +9,8 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <div className="d-flex">
-        <SideBar />
-
-        
-        <Basket />
-      </div>
+      <SubHeader />
+      <Content />
     </div>
   );
 };
