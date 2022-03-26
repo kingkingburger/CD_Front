@@ -9,8 +9,10 @@ const UserPage = () => {
   return (
     <div>
       <Header />
-      <SideBar />
-      <UserInfo key={data.name} userinfo={data.state} />
+      <div className="d-flex">
+        <SideBar />
+        <UserInfo key={data.name} userinfo={data.state} />
+      </div>
     </div>
   );
 };

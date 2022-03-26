@@ -7,8 +7,10 @@ const UserModify = () => {
   return (
     <div>
       <Header />
-      <SideBar />
-      <UserModifyInfo />
+      <div className="d-flex">
+        <SideBar />
+        <UserModifyInfo />
+      </div>
     </div>
   );
 };

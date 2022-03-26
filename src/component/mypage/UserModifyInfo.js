@@ -10,7 +10,7 @@ const UserModifyInfo = () => {
     setText({ ...text, [e.target.name]: value });
   };
   return (
-    <div className="d-sm-table-cell col-7">
+    <div className="d-sm-table-cell col-7 m-5">
       <div className={`col-12`}>
         <div className={styles.content}>
           <div className={styles.wrap}>

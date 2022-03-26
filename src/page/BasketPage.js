@@ -1,4 +1,4 @@
-import Basket from "../component/shared/Basket";
+import Basket from "../component/mypage/Basket";
 import Header from "../component/shared/Header";
 import SideBar from "../component/shared/SideBar";
 

@@ -2,7 +2,7 @@ import styles from "../css/Basket.module.css";
 
 const Basket = () => {
   return (
-    <div className="container m-5">
+    <div className="col-7 m-5">
       <div className="">
         <h1>장바구니 </h1>
         <hr />

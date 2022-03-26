@@ -30,6 +30,10 @@ index.js
 			├── <Header/>
 			├── <SideBar/>
 			└── <Chating/>
+	└── <BasketPage />
+			├── <Header/>
+			├── <SideBar/>
+			└── <Basket/>
 ```
 
 
@@ -44,8 +48,9 @@ src
 	└── detailcontent_element
 		└── Moving_slid
 	└── mypage
+		├── Basket
 		├── UserInfo
-		└── UserInfo
+		└── UserInfoModify
 	└── shared
 		└── Conetent
 		├── ContentDetail
