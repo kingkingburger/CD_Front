@@ -6,6 +6,9 @@ import font from "../css/Font.module.css";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
+  const img_click = () => {
+    alert("이미지 클릭됨");
+  }
 
   return (
     <nav className="navbar-expand-xxl navbar-dark bg-danger float-left">
@@ -60,11 +63,6 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
-                  <Link to={`/SignUp`} className="nav-link text-white">
-                    회원가입
-                  </Link>
-                </li>
-                <li className="nav-item mx-1 d-flex align-items-center">
                   <a className="nav-link text-white" href="#">
                     장바구니
                   </a>
@@ -75,9 +73,12 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
-                  <a className="nav-link text-white" href="/uploadPage">
+                  <Link to={`/uploadPage`} className="nav-link text-white">
                     판매하기
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <img src={require('../../images/bell.png')} className="nav-link" onMouseEnter={img_click} />
                 </li>
               </div>
             </ul>
