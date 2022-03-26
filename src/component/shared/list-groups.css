@@ -1,0 +1,17 @@
+.list-group {
+  width: auto;
+
+  min-width: 477px;
+  margin: 4rem auto;
+  gap: 0.5rem;
+}
+
+.list-group-checkable {
+  display: grid;
+  gap: 0.5rem;
+  border: 0;
+}
+.list-group-checkable .list-group-item {
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
