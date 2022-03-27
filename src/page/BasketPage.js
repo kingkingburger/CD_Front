@@ -1,18 +1,17 @@
-// import React, { useState, useEffect } from "react";
+import Basket from "../component/mypage/Basket";
 import Header from "../component/shared/Header";
 import SideBar from "../component/shared/SideBar";
-import UserModifyInfo from "../component/mypage/UserModifyInfo";
 
-const UserModify = () => {
+const BasketPage = () => {
   return (
     <div>
       <Header />
       <div className="d-flex">
         <SideBar />
-        <UserModifyInfo />
+        <Basket />
       </div>
     </div>
   );
 };
 
-export default UserModify;
+export default BasketPage;
