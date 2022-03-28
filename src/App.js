@@ -8,6 +8,7 @@ import MyPage from "./page/MyPage";
 import MyPageModify from "./page/MyPageModify";
 import ChatingPage from "./page/Chating";
 import BasketPage from "./page/BasketPage";
+import ReceiptPage from "./page/ReceiptPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/MyPageModify" element={<MyPageModify />} />
       <Route path="/Chating" element={<ChatingPage />} />
       <Route path="/BasketPage" element={<BasketPage />} />
+      <Route path="/ReceiptPage" element={<ReceiptPage />} />
     </Routes>
   );
 }
