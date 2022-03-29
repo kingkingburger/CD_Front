@@ -9,8 +9,31 @@ index.js
     │		├── <SubHeader/>
 	│		└── <Content/>
 	└── <DetailPage />
+	│		├── <Header/>
+	│		└── <DetailContent/>
+	└── <SignUpPage />
+	│		├── <Header/>
+	│		└── <SignUp/>
+	└── <UploadPage />
+	│		├── <Header/>
+	│		├── <SubHeader/>
+	│		└── <UploadContent/>
+	└── <MyPage />
+	│		├── <Header/>
+	│		├── <SideBar/>
+	│		└── <UserInfo/>
+	└── <MyPage />
+	│		├── <Header/>
+	│		├── <SideBar/>
+	│		└── <UserModifyInfo/>
+	└── <Chating />
 			├── <Header/>
-			└── <DetailContent/>
+			├── <SideBar/>
+			└── <Chating/>
+	└── <BasketPage />
+			├── <Header/>
+			├── <SideBar/>
+			└── <Basket/>
 ```
 
 
@@ -20,19 +43,26 @@ index.js
 ```
 src
 ├── component
+	└── chating
+		└── Chating
 	└── detailcontent_element
 		└── Moving_slid
+	└── mypage
+		├── Basket
+		├── UserInfo
+		└── UserInfoModify
 	└── shared
 		└── Conetent
 		├── ContentDetail
 		├── DetailContent
 		├── Header
 		├── Layout
+		├── SignUp
+		├── SideBar
 		└── SubHeader
 ├── data
 	└── userdata.json
 ├── util
-	└── Dropdown
 	├── Timer
 
 ```

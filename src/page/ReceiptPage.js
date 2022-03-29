@@ -1,17 +1,17 @@
-import Basket from "../component/mypage/Basket";
+import Receipt from "../component/receipt/Receipt";
 import Header from "../component/shared/Header";
 import SideBar from "../component/shared/SideBar";
 
-const BasketPage = () => {
+const ReceiptPage = () => {
   return (
     <div>
       <Header />
       <div className="d-flex">
         <SideBar />
-        <Basket />
+        <Receipt />
       </div>
     </div>
   );
 };
 
-export default BasketPage;
+export default ReceiptPage;

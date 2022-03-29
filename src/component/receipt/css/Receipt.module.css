@@ -1,0 +1,13 @@
+.img {
+  width: 100%;
+  display: block;
+  background-size: cover;
+  transform: translate(0, -13%);
+}
+.card_photo {
+  overflow: hidden;
+  background-color: #f8f9fa;
+  background-size: cover;
+  border-radius: 8px;
+  font-size: 62.5%;
+}
