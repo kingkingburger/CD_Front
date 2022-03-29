@@ -1,6 +1,6 @@
 const SideBar = () => {
   return (
-    <div className="d-table-sell">
+    <div className="d-sm-table-cell">
       <div
         className="d-flex flex-column flex-shrink-0 col-sm-4 p-3 bg-light rounded d-none d-sm-table-cell "
         style={{ width: "280px", height: "800px" }}
