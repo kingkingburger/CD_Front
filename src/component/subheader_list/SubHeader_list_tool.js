@@ -6,13 +6,10 @@ const SubHeader_list = () => {
     <div className="container d-flex justify-content-center">
       <div className="row">
         <a className="col" href="#">
-          Link 1
+          자동차용품
         </a>
         <a className="col" href="#">
-          Link 2
-        </a>
-        <a className="col" href="#">
-          Link 3
+          공구/안전/산업용품
         </a>
       </div>
     </div>
