@@ -10,7 +10,7 @@ const Moving_slid = ({ data }) => {
             id="demo"
             className="carousel slide "
             data-bs-ride="carousel"
-            style={{ maxWidth: "700px" }}
+            style={{ maxWidth: "500px" }}
           >
             <div className={`carousel-indicators ${styles.invertIndicators}`}>
               <button
@@ -35,7 +35,7 @@ const Moving_slid = ({ data }) => {
               <div className="carousel-item active">
                 <img
                   src={data}
-                  width="700px"
+                  width="500px"
                   alt="nikeShoes1"
                   className="d-block "
                 />
@@ -43,7 +43,7 @@ const Moving_slid = ({ data }) => {
               <div className="carousel-item">
                 <img
                   src={data}
-                  width="700px"
+                  width="500px"
                   alt="nikeShoes2"
                   className="d-block "
                 />
@@ -52,7 +52,7 @@ const Moving_slid = ({ data }) => {
               <div className="carousel-item">
                 <img
                   src={data}
-                  width="700px"
+                  width="500px"
                   alt="nikeShoes3"
                   className="d-block "
                 />
