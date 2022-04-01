@@ -4,7 +4,7 @@ const Basket = () => {
   return (
     <div className="col-7 m-5">
       <div className="">
-        <h1>거래 내역 </h1>
+        <h1>장바구니 </h1>
         <hr />
       </div>
       <ul class="list-group mt-4">
@@ -12,7 +12,7 @@ const Basket = () => {
           <div className="row">
             <img
               className={`img-fluid col-lg-3 py-2`}
-              src="./static/img/사과.jpg"
+              src="./static/img/전자레인지.png"
               alt="장바구니"
             ></img>
             <div className="col-lg-9">

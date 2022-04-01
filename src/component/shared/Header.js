@@ -58,13 +58,8 @@ const Header = () => {
               <li></li>
               <div className="d-flex">
                 <li className="nav-item mx-1 d-flex align-items-center">
-                  <a className="nav-link text-white " href="#">
+                  <Link to={`/Sign`} className="nav-link text-white">
                     로그인
-                  </a>
-                </li>
-                <li className="nav-item mx-1 d-flex align-items-center">
-                  <Link to={`/SignUp`} className="nav-link text-white">
-                    회원가입
                   </Link>
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
