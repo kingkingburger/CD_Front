@@ -56,6 +56,8 @@ const SignUp = () => {
           console.log("======================", "로그인 성공");
           sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
           sessionStorage.setItem("name", res.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
+          sessionStorage.setItem("passwd", res.data.passwd); // sessionStorage에 id를 user_id라는 key 값으로 저장
+          sessionStorage.setItem("phone", res.data.phone); // sessionStorage에 id를 user_id라는 key 값으로 저장
         }
         // 작업 완료 되면 페이지 이동(새로고침)
         document.location.href = "/";

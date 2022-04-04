@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import styles from "./css/Userinfo.module.css";
+import { useEffect, useState } from "react";
 
 const UserInfo = ({ userinfo }) => {
   //유저 정보가 넘어온 공간
+  const [isActive, setIsActive] = useState(false);
+  const [isLogin, setIsLogin] = useState(false); //로그인 관리
+  const onClick = () => setIsActive(!isActive);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("name") === null) {
+      // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
+    } else {
+      // sessionStorage 에 name 라는 key 값으로 저장된 값이 있다면
+      // 로그인 상태 변경
+      setIsLogin(true);
+    }
+  });
   let user;
 
   if (!userinfo) {
@@ -32,7 +46,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_name}>
                     <span className={styles.item_text}>
-                      {user.name ? user.name : "이름"}
+                      {isLogin ? (
+                        <div>{sessionStorage.getItem("name")}</div>
+                      ) : (
+                        "이름"
+                      )}
                     </span>
                   </div>
                 </li>
@@ -40,7 +58,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_pw}>
                     <span className={styles.item_text}>
-                      {user.pw ? user.pw : "비밀번호"}
+                      {isLogin ? (
+                        <div>{sessionStorage.getItem("passwd")}</div>
+                      ) : (
+                        "비밀번호"
+                      )}
                     </span>
                   </div>
                 </li>
@@ -48,7 +70,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_phone}>
                     <span className={styles.item_text}>
-                      {user.phone ? user.phone : "전화번호"}
+                      {isLogin ? (
+                        <div>{sessionStorage.getItem("phone")}</div>
+                      ) : (
+                        "전화번호"
+                      )}
                     </span>
                   </div>
                 </li>
@@ -56,7 +82,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_email}>
                     <span className={styles.item_text}>
-                      {user.email ? user.email : "e-mail"}
+                      {isLogin ? (
+                        <div>{sessionStorage.getItem("user_id")}</div>
+                      ) : (
+                        "email"
+                      )}
                     </span>
                   </div>
                 </li>

@@ -9,6 +9,14 @@ const Header = () => {
   const onClick = () => setIsActive(!isActive);
   const img_click = () => {};
 
+  const onLogout = () => {
+    sessionStorage.removeItem("user_id");
+    sessionStorage.removeItem("passwd");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("phone");
+
+    document.location.href = "/";
+  };
   useEffect(() => {
     if (sessionStorage.getItem("name") === null) {
       // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
@@ -91,6 +99,15 @@ const Header = () => {
                   <Link to={`/uploadPage`} className="nav-link text-white">
                     판매하기
                   </Link>
+                </li>
+                <li className="nav-item mx-1 d-flex align-items-center">
+                  <button
+                    className="nav-link text-white"
+                    type="button"
+                    onClick={onLogout}
+                  >
+                    로그아웃
+                  </button>
                 </li>
                 <li>
                   <img
