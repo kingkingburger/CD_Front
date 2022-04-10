@@ -1,26 +1,34 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import font from "../css/Font.module.css";
+import Cookies from "universal-cookie";
+
 const SignUp = () => {
+  let navigate = useNavigate();
+  let cookie = new Cookies();
+
   const [text, setText] = useState({
-    email: "",
-    passwd: "",
-    name: "",
-    phone: "",
+    memberLoginid: "",
+    memberName: "",
+    memberPassword: "",
+    memberPhone: "",
   });
+
   const onChange = (e) => {
     const { value } = e.target;
     setText({ ...text, [e.target.name]: value });
   };
 
   const onClickSign = () => {
-    console.log("click login");
     axios
-      .post("http://localhost:8080/api/save", text)
+      .post("http://localhost:8080/add", text, { withCredentials: true })
       .then((res) => {
         console.log(res);
+        console.log(cookie.get("JSESSIONID"));
+        navigate("/");
       })
-      .catch();
+      .catch((err) => alert("중복된 Id 입니다."));
   };
   console.log(text);
   return (
@@ -45,10 +53,10 @@ const SignUp = () => {
               />
             </div>
             <input
-              type="email"
+              type="text"
               className="form-control"
-              placeholder="Enter email"
-              name="email"
+              placeholder="Enter loginID"
+              name="memberLoginid"
               onChange={onChange}
             />
           </div>
@@ -70,7 +78,7 @@ const SignUp = () => {
               type="password"
               className="form-control"
               placeholder="Enter password"
-              name="passwd"
+              name="memberPassword"
               onChange={onChange}
             />
           </div>
@@ -93,7 +101,7 @@ const SignUp = () => {
               type="text"
               className="form-control"
               placeholder="Enter name"
-              name="name"
+              name="memberName"
               onChange={onChange}
             />
           </div>
@@ -114,7 +122,7 @@ const SignUp = () => {
                 type="text"
                 className="form-control"
                 placeholder="Enter mobile number"
-                name="phone"
+                name="memberPhone"
                 onChange={onChange}
               />
             </div>

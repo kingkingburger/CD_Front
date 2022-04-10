@@ -5,13 +5,14 @@ import UserInfo from "../component/mypage/Userinfo";
 import { useLocation } from "react-router-dom";
 
 const UserPage = () => {
-  const data = useLocation();
+  // const data = useLocation();
+  // key={data.name} userinfo={data.state}
   return (
     <div>
       <Header />
       <div className="d-flex">
         <SideBar />
-        <UserInfo key={data.name} userinfo={data.state} />
+        <UserInfo />
       </div>
     </div>
   );

@@ -1,66 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import font from "../css/Font.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { setCookie } from "../../util/Cookie";
+import Cookies from "universal-cookie";
 
 const SignUp = () => {
-  const [text, setText] = useState({ email: "", passwd: "" });
+  axios.defaults.withCredentials = true; // withCredentials 전역 설정
+
+  const [text, setText] = useState({ memberLoginid: "", memberPassword: "" });
+  let navigate = useNavigate();
+  let cookie = new Cookies();
+
+  //화면에 글자 입력을 받는 함수
   const onChange = (e) => {
     const { value } = e.target;
     setText({ ...text, [e.target.name]: value });
   };
 
-  const url = "http://localhost:8080/api/login";
-  // const throw_data = () => {
-  //   axios.post(url, text).then((res) => {
-  //     if(res.data)
-  //   });
-  // };
-  const [inputId, setInputId] = useState("");
-  const [inputPw, setInputPw] = useState("");
-
-  const handleInputId = (e) => {
-    setInputId(e.target.value);
-  };
-
-  const handleInputPw = (e) => {
-    setInputPw(e.target.value);
-  };
-
+  //확인 버튼 클릭시
   const onClickLogin = () => {
-    console.log("click login");
-    console.log("ID : ", inputId);
-    console.log("PW : ", inputPw);
     axios
-      .post("http://localhost:8080/api/login", {
-        email: inputId,
-        passwd: inputPw,
-      })
+      .post("http://localhost:8080/login", text, { withCredentials: true })
       .then((res) => {
         console.log(res);
-        console.log("res.data.userId :: ", res.data.userId);
-        console.log("res.data.msg :: ", res.data.msg);
-        if (res.data.email === undefined) {
-          // id 일치하지 않는 경우 userId = undefined, msg = '입력하신 id 가 일치하지 않습니다.'
-          console.log("======================", res.data.msg);
-          alert("입력하신 id 가 일치하지 않습니다.");
-        } else if (res.data.email === null) {
-          // id는 있지만, pw 는 다른 경우 userId = null , msg = undefined
-          console.log(
-            "======================",
-            "입력하신 비밀번호 가 일치하지 않습니다."
-          );
-          alert("입력하신 비밀번호 가 일치하지 않습니다.");
-        } else if (res.data.email === inputId) {
-          // id, pw 모두 일치 userId = userId1, msg = undefined
-          console.log("======================", "로그인 성공");
-          sessionStorage.setItem("user_id", inputId); // sessionStorage에 id를 user_id라는 key 값으로 저장
-          sessionStorage.setItem("name", res.data.name); // sessionStorage에 id를 user_id라는 key 값으로 저장
-          sessionStorage.setItem("passwd", res.data.passwd); // sessionStorage에 id를 user_id라는 key 값으로 저장
-          sessionStorage.setItem("phone", res.data.phone); // sessionStorage에 id를 user_id라는 key 값으로 저장
+
+        if (res.data[0] != null) {
+          // 들어온 값이 모두 다르다면 서버에서 data[0]값을 보내준다.
+          alert(res.data[0].defaultMessage);
+        } else {
+          // 로그인 정보가 정확하다면
+          navigate("/");
         }
-        // 작업 완료 되면 페이지 이동(새로고침)
-        document.location.href = "/";
       })
       .catch();
   };
@@ -98,9 +69,8 @@ const SignUp = () => {
                 type="email"
                 className="form-control"
                 placeholder="Enter email"
-                name="input_id"
-                value={inputId}
-                onChange={handleInputId}
+                name="memberLoginid"
+                onChange={onChange}
               />
             </div>
           </div>
@@ -121,9 +91,8 @@ const SignUp = () => {
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
-                name="input_pw"
-                value={inputPw}
-                onChange={handleInputPw}
+                name="memberPassword"
+                onChange={onChange}
               />
             </div>
           </div>

@@ -1,31 +1,48 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/Header.module.css";
 import font from "../css/Font.module.css";
+import Cookies from "universal-cookie";
+import axios from "axios";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isLogin, setIsLogin] = useState(false); //로그인 관리
+  const [name, setName] = useState("");
   const onClick = () => setIsActive(!isActive);
   const img_click = () => {};
+  const cookie = new Cookies();
 
+  //로그아웃 기능
   const onLogout = () => {
-    sessionStorage.removeItem("user_id");
-    sessionStorage.removeItem("passwd");
-    sessionStorage.removeItem("name");
-    sessionStorage.removeItem("phone");
+    axios
+      .post("http://localhost:8080/logout", {}, { withCredentials: true })
+      .then((res) => console.log(res), cookie.remove("JSESSIONID"));
 
     document.location.href = "/";
   };
+
   useEffect(() => {
-    if (sessionStorage.getItem("name") === null) {
-      // sessionStorage 에 name 라는 key 값으로 저장된 값이 없다면
-    } else {
-      // sessionStorage 에 name 라는 key 값으로 저장된 값이 있다면
+    let log = true;
+    const axiosdata = async () => {
       // 로그인 상태 변경
-      setIsLogin(true);
-    }
-  });
+      await axios
+        .post(
+          "http://localhost:8080/check",
+          // { session: cookie.get("mySessionId") },
+          { withCredentials: true }
+        )
+        .then((res) => setName(res.data.memberLoginid));
+      if (log) {
+        setIsLogin(true);
+      }
+    };
+    axiosdata();
+    return () => {
+      log = false;
+    };
+  }, []);
+  console.log(name);
   return (
     <nav className="navbar-expand-xxl navbar-dark bg-danger float-left">
       <div className="container px-5 ">
@@ -77,7 +94,7 @@ const Header = () => {
                   {/* 로그인이 되어있다면 */}
                   {isLogin ? (
                     <Link to={`/MyPage`} className="nav-link text-white">
-                      {sessionStorage.getItem("name")}
+                      {name}
                     </Link>
                   ) : (
                     <Link to={`/Sign`} className="nav-link text-white">
