@@ -12,13 +12,13 @@ const Header = () => {
   const onClick = () => setIsActive(!isActive);
   const img_click = () => {};
   const cookie = new Cookies();
-
+  const logincheck = sessionStorage.getItem("logincheck");
   //로그아웃 기능
   const onLogout = () => {
     axios
       .post("http://localhost:8080/logout", {}, { withCredentials: true })
-      .then((res) => console.log(res), cookie.remove("JSESSIONID"));
-
+      .then((res) => cookie.remove("JSESSIONID"));
+    sessionStorage.removeItem("logincheck");
     document.location.href = "/";
   };
 
@@ -27,11 +27,7 @@ const Header = () => {
     const axiosdata = async () => {
       // 로그인 상태 변경
       await axios
-        .post(
-          "http://localhost:8080/check",
-          // { session: cookie.get("mySessionId") },
-          { withCredentials: true }
-        )
+        .post("http://localhost:8080/check", { withCredentials: true })
         .then((res) => setName(res.data.memberLoginid));
       if (log) {
         setIsLogin(true);
@@ -42,7 +38,7 @@ const Header = () => {
       log = false;
     };
   }, []);
-  console.log(name);
+
   return (
     <nav className="navbar-expand-xxl navbar-dark bg-danger float-left">
       <div className="container px-5 ">
@@ -92,7 +88,7 @@ const Header = () => {
               <div className="d-flex">
                 <li className="nav-item mx-1 d-flex align-items-center">
                   {/* 로그인이 되어있다면 */}
-                  {isLogin ? (
+                  {logincheck ? (
                     <Link to={`/MyPage`} className="nav-link text-white">
                       {name}
                     </Link>

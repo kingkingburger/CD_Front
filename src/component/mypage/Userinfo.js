@@ -10,7 +10,6 @@ const UserInfo = () => {
   const [info, setInfo] = useState({});
   const cookie = new Cookies();
   useEffect(() => {
-    console.log(cookie.get("JSESSIONID"));
     let log = true;
     const axiosdata = async () => {
       // 로그인 상태 변경

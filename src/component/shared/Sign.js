@@ -25,11 +25,13 @@ const SignUp = () => {
       .then((res) => {
         console.log(res);
 
+        // console.log(cookie.get("JSESSIONID"));
         if (res.data[0] != null) {
           // 들어온 값이 모두 다르다면 서버에서 data[0]값을 보내준다.
           alert(res.data[0].defaultMessage);
         } else {
           // 로그인 정보가 정확하다면
+          sessionStorage.setItem("logincheck", true);
           navigate("/");
         }
       })
