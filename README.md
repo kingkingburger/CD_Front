@@ -22,7 +22,7 @@ index.js
 	│		├── <Header/>
 	│		├── <SideBar/>
 	│		└── <UserInfo/>
-	└── <MyPage />
+	└── <MyPageInfo />
 	│		├── <Header/>
 	│		├── <SideBar/>
 	│		└── <UserModifyInfo/>
@@ -34,6 +34,9 @@ index.js
 			├── <Header/>
 			├── <SideBar/>
 			└── <Basket/>
+	└── <SignPage />
+			├── <Header/>
+			└── <Sign/>
 ```
 
 

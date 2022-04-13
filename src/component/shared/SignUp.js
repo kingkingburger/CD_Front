@@ -1,5 +1,36 @@
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import font from "../css/Font.module.css";
+import Cookies from "universal-cookie";
+
 const SignUp = () => {
+  let navigate = useNavigate();
+  let cookie = new Cookies();
+
+  const [text, setText] = useState({
+    memberLoginid: "",
+    memberName: "",
+    memberPassword: "",
+    memberPhone: "",
+  });
+
+  const onChange = (e) => {
+    const { value } = e.target;
+    setText({ ...text, [e.target.name]: value });
+  };
+
+  const onClickSign = () => {
+    axios
+      .post("http://localhost:8080/add", text, { withCredentials: true })
+      .then((res) => {
+        console.log(res);
+        console.log(cookie.get("JSESSIONID"));
+        navigate("/");
+      })
+      .catch((err) => alert("중복된 Id 입니다."));
+  };
+  console.log(text);
   return (
     <div className="container mt-4 d-flex justify-content-center">
       <div className="d-flex flex-column">
@@ -8,125 +39,103 @@ const SignUp = () => {
         </h1>
         <span className="p">회원정보를 입력해주세요.</span>
 
-        <form action="/action_page.php" style={{ width: "400px" }}>
-          <div className="mb-3 mt-3">
-            <div className="input-group input-group-lg">
-              <div
-                className="input-group-tex
+        <div className="mb-3 mt-3">
+          <div className="input-group input-group-lg">
+            <div
+              className="input-group-tex
               t p-0"
-              >
-                <img
-                  width="40px"
-                  height="100%"
-                  src="./static/img/email.png"
-                  alt="email"
-                />
-              </div>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter email"
+            >
+              <img
+                width="40px"
+                height="100%"
+                src="./static/img/email.png"
+                alt="email"
               />
             </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter loginID"
+              name="memberLoginid"
+              onChange={onChange}
+            />
+          </div>
+        </div>
+        <div className="mb-3">
+          <div className="input-group input-group-lg mb-3">
+            <div
+              className="input-group-tex
+              t p-0"
+            >
+              <img
+                width="40px"
+                height="100%"
+                src="./static/img/password.png"
+                alt="email"
+              />
+            </div>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+              name="memberPassword"
+              onChange={onChange}
+            />
+          </div>
+        </div>
+
+        <div className="mb-3">
+          <div className="input-group input-group-lg mb-3">
+            <div
+              className="input-group-tex
+              t p-0"
+            >
+              <img
+                width="40px"
+                height="100%"
+                src="./static/img/name.png"
+                alt="email"
+              />
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter name"
+              name="memberName"
+              onChange={onChange}
+            />
           </div>
           <div className="mb-3">
             <div className="input-group input-group-lg mb-3">
               <div
                 className="input-group-tex
-              t p-0"
+                t p-0"
               >
                 <img
                   width="40px"
                   height="100%"
-                  src="./static/img/password.png"
-                  alt="email"
-                />
-              </div>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter password"
-              />
-            </div>
-          </div>
-          <div className="mb-3">
-            <div className="input-group input-group-lg mb-3">
-              <div
-                className="input-group-tex
-              t p-0"
-              >
-                <img
-                  width="40px"
-                  height="100%"
-                  src="./static/img/passwordCheck.png"
-                  alt="email"
-                />
-              </div>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Re-enter password"
-              />
-            </div>
-          </div>
-          <div className="mb-3">
-            <div className="input-group input-group-lg mb-3">
-              <div
-                className="input-group-tex
-              t p-0"
-              >
-                <img
-                  width="40px"
-                  height="100%"
-                  src="./static/img/name.png"
+                  src="./static/img/handphone.png"
                   alt="email"
                 />
               </div>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter name"
+                placeholder="Enter mobile number"
+                name="memberPhone"
+                onChange={onChange}
               />
             </div>
-            <div className="mb-3">
-              <div className="input-group input-group-lg mb-3">
-                <div
-                  className="input-group-tex
-                t p-0"
-                >
-                  <img
-                    width="40px"
-                    height="100%"
-                    src="./static/img/handphone.png"
-                    alt="email"
-                  />
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter mobile number"
-                />
-              </div>
-            </div>
           </div>
-          <div className="form-check mb-3">
-            <label
-              className="form-check-la
-            bel"
-            >
-              <input
-                className="form-check-inpu
-              t"
-                type="checkbox"
-                name="remember"
-              />
-              Remember me
-            </label>
-          </div>
-          <button type="submit" className="mt-5 p-3 w-100 btn btn-primary">
-            동의하고 가입하기
-          </button>
-        </form>
+        </div>
+
+        <button
+          type="submit"
+          className="mt-5 p-3 w-100 btn btn-primary"
+          onClick={onClickSign}
+        >
+          동의하고 가입하기
+        </button>
       </div>
     </div>
   );

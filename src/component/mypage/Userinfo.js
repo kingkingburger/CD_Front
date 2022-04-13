@@ -1,18 +1,37 @@
 import { Link } from "react-router-dom";
 import styles from "./css/Userinfo.module.css";
-
-const UserInfo = ({ userinfo }) => {
+import { useEffect, useState } from "react";
+import Cookies from "universal-cookie";
+import axios from "axios";
+// import IsLogin from "../../util/IsLogin";
+const UserInfo = () => {
   //유저 정보가 넘어온 공간
-  let user;
+  const [isLogin, setIsLogin] = useState(false); //로그인 관리
+  const [info, setInfo] = useState({});
+  const cookie = new Cookies();
+  useEffect(() => {
+    let log = true;
+    const axiosdata = async () => {
+      // 로그인 상태 변경
+      await axios
+        .post(
+          "http://localhost:8080/check",
 
-  if (!userinfo) {
-    //처음 들어갔을 때 정보가 없다면 공백으로
-    userinfo = { name: "", pw: "", phone: "", email: "" };
-    user = userinfo;
-  } else {
-    //있다면 넘어온 props로
-    user = userinfo.info;
-  }
+          { withCredentials: true }
+        )
+        .then((res) => setInfo(res));
+      if (log) {
+        setIsLogin(true);
+      }
+    };
+    axiosdata();
+    return () => {
+      log = false;
+    };
+  }, []);
+
+  console.log(info.data);
+  console.log(isLogin);
 
   return (
     <div className="d-sm-table-cell col-7 m-5">
@@ -32,7 +51,7 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_name}>
                     <span className={styles.item_text}>
-                      {user.name ? user.name : "이름"}
+                      {isLogin ? <div>{info.data.memberName}</div> : "이름"}
                     </span>
                   </div>
                 </li>
@@ -40,7 +59,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_pw}>
                     <span className={styles.item_text}>
-                      {user.pw ? user.pw : "비밀번호"}
+                      {isLogin ? (
+                        <div>{info.data.memberPassword}</div>
+                      ) : (
+                        "비밀번호"
+                      )}
                     </span>
                   </div>
                 </li>
@@ -48,7 +71,11 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_phone}>
                     <span className={styles.item_text}>
-                      {user.phone ? user.phone : "전화번호"}
+                      {isLogin ? (
+                        <div>{info.data.memberPhone}</div>
+                      ) : (
+                        "전화번호"
+                      )}
                     </span>
                   </div>
                 </li>
@@ -56,7 +83,7 @@ const UserInfo = ({ userinfo }) => {
                 <li>
                   <div className={styles.row_item_email}>
                     <span className={styles.item_text}>
-                      {user.email ? user.email : "e-mail"}
+                      {isLogin ? <div>{info.data.memberRank}</div> : "email"}
                     </span>
                   </div>
                 </li>

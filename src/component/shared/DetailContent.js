@@ -33,8 +33,6 @@ const DetailContent = ({ data }) => {
             <div>현재 가격: {user.price}</div>
             <div>즉시 구매가: {user.immediately}</div>
 
-            <p className="text-end">평균 거래가: 26,000</p>
-
             <div className="text-end">
               <button
                 type="button"
@@ -74,14 +72,7 @@ const DetailContent = ({ data }) => {
                           </div>
 
                           <div className="form-check my-3">
-                            <label className="form-check-label">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="remember"
-                              />
-                              Remember me
-                            </label>
+                            <label className="form-check-label"></label>
                           </div>
                           <div className="text-end">
                             <button type="submit" className="btn btn-primary">

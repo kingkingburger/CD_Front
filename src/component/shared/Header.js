@@ -1,14 +1,43 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../css/Header.module.css";
 import font from "../css/Font.module.css";
+import Cookies from "universal-cookie";
+import axios from "axios";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isLogin, setIsLogin] = useState(false); //로그인 관리
+  const [name, setName] = useState("");
   const onClick = () => setIsActive(!isActive);
-  const img_click = () => {
-    alert("이미지 클릭됨");
+  const img_click = () => {};
+  const cookie = new Cookies();
+  const logincheck = sessionStorage.getItem("logincheck");
+  //로그아웃 기능
+  const onLogout = () => {
+    axios
+      .post("http://localhost:8080/logout", {}, { withCredentials: true })
+      .then((res) => cookie.remove("JSESSIONID"));
+    sessionStorage.removeItem("logincheck");
+    document.location.href = "/";
   };
+
+  useEffect(() => {
+    let log = true;
+    const axiosdata = async () => {
+      // 로그인 상태 변경
+      await axios
+        .post("http://localhost:8080/check", { withCredentials: true })
+        .then((res) => setName(res.data.memberLoginid));
+      if (log) {
+        setIsLogin(true);
+      }
+    };
+    axiosdata();
+    return () => {
+      log = false;
+    };
+  }, []);
 
   return (
     <nav className="navbar-expand-xxl navbar-dark bg-danger float-left">
@@ -58,14 +87,16 @@ const Header = () => {
               <li></li>
               <div className="d-flex">
                 <li className="nav-item mx-1 d-flex align-items-center">
-                  <a className="nav-link text-white " href="#">
-                    로그인
-                  </a>
-                </li>
-                <li className="nav-item mx-1 d-flex align-items-center">
-                  <Link to={`/SignUp`} className="nav-link text-white">
-                    회원가입
-                  </Link>
+                  {/* 로그인이 되어있다면 */}
+                  {logincheck ? (
+                    <Link to={`/MyPage`} className="nav-link text-white">
+                      {name}
+                    </Link>
+                  ) : (
+                    <Link to={`/Sign`} className="nav-link text-white">
+                      로그인
+                    </Link>
+                  )}
                 </li>
                 <li className="nav-item mx-1 d-flex align-items-center">
                   <Link to={`/BasketPage`} className="nav-link text-white">
@@ -81,6 +112,15 @@ const Header = () => {
                   <Link to={`/uploadPage`} className="nav-link text-white">
                     판매하기
                   </Link>
+                </li>
+                <li className="nav-item mx-1 d-flex align-items-center">
+                  <button
+                    className="nav-link text-white"
+                    type="button"
+                    onClick={onLogout}
+                  >
+                    로그아웃
+                  </button>
                 </li>
                 <li>
                   <img
